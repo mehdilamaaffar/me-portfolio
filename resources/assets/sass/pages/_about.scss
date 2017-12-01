@@ -1,0 +1,145 @@
+.about {
+  overflow: hidden;
+
+  .about__description {
+    padding: 2em 1em;
+
+    p {
+      font-size: 1.3em;
+      color: #555;
+      letter-spacing: 3px;
+      line-height: 25px;
+      font-weight: 100;
+    }
+
+    p:last-child {
+      padding-bottom: 2em;
+      border-bottom: 2px solid lighten(#555, 50)
+    }
+
+    h2 {
+      font: italic 1em Lato;
+      color: rgb(112, 112, 112);
+    }
+  }
+}
+
+.bottom-section {
+  width: 100%;
+}
+
+.form {
+  float: left;
+  width: 67%;
+  margin: 2em auto;
+  overflow: hidden;
+  background: rgba(255,255,255,1);
+  border-radius: 5px;
+
+  @include e(header) {
+    height: 75px;
+    color: rgb(100, 100, 100);
+    background: rgba(0,0,0,.05);
+    line-height: 75px;
+    padding-left: 20px;
+    border-radius: 5px 5px 0 0;
+}
+
+  %base-input {
+    line-height: 50px;
+    padding: 0 0 0 20px;
+    border-top: 0;
+    border-left: 1px solid rgba(0,0,0,.1);
+    border-right: 1px solid rgba(0,0,0,.1);
+    border-bottom: 1px solid rgba(0,0,0,.1);
+  }
+
+  .form-group input {
+    height: 50px;
+    @extend %base-input;
+  }
+
+  .form-group textarea {
+    height: 250px;
+    @extend %base-input;
+  }
+
+  .form__btn {
+    height: 40px;
+    background: lighten(#555, 40%);
+    border-radius: 5px;
+    border: 0;
+    margin: 7px 0;
+    color: rgba(255,255,255,1);
+    float: left;
+    padding: 0 30px 0 30px;
+    border-bottom: 3px solid lighten(#555, 30%);
+    transition: all linear .2s;
+
+    &:hover {
+      background: lighten(#555, 20%);
+    }
+
+    &:focus {
+       outline: none;
+    }
+  }
+}
+
+.contact {
+  width: 30%;
+  float: right;
+  @include e(img) {
+    float: right;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  @include e('social-media') {
+    @include e('name') {
+      p {
+        color: lighten(#555, 20%);
+        text-shadow: 1px 1px lighten(#555, 70%);
+        overflow: hidden;
+        padding: 1em 0;
+        text-align: center;
+        width: 100%;
+        font-size: 1.5em;
+      }
+    }
+
+    .contact__social-media-icon {
+      font-size: 3em;
+      color: lighten(#555, 40%);
+      padding-left: 0.5em;
+      margin: 0 auto;
+      text-align: center;
+      width: 100%;
+
+      &:hover {
+        color: lighten(#555, 20%);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 670px) {
+
+  .form {
+    width: 100%;
+  }
+
+  .contact {
+    width: 100%;
+    text-align: center;
+
+    .contact__social-media-icon {
+      padding-left: 0em;
+      padding-right: 0.5em;
+
+    }
+  }
+}
