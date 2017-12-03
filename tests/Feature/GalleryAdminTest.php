@@ -24,4 +24,13 @@ class GalleryAdminTest extends TestCase
         $this->get('/admin')
             ->assertStatus(200);
     }
+
+    /** @test */
+    function an_unautenticated_user_can_post_new_gallery()
+    {
+        $gallery = factory('App\Gallery')->raw();
+
+        $this->post('/admin/gallery', $gallery)
+            ->assertRedirect('/login');
+    }
 }
