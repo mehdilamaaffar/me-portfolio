@@ -11,4 +11,3 @@ mix
     'resources/assets/vendor/css/lightbox.min.css',
     'resources/assets/vendor/css/dropzone.min.css',
   ], 'public/css/vendor.css')
-  .browserSync('localhost:8000')
