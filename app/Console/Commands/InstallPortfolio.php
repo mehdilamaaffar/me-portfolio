@@ -2,11 +2,7 @@
 
 namespace App\Console\Commands;
 
-use Validator;
-use RuntimeException;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Artisan;
-use App\User;
 
 class InstallPortfolio extends Command
 {
@@ -22,7 +18,7 @@ class InstallPortfolio extends Command
      *
      * @var string
      */
-    protected $description = 'Install portfolio with user admin.';
+    protected $description = 'Install portfolio.';
 
     /**
      * Create a new command instance.
@@ -43,31 +39,7 @@ class InstallPortfolio extends Command
     {
         $this->execShellWithPrettyPrint('php artisan key:generate');
         $this->execShellWithPrettyPrint('php artisan migrate');
-
-        $data['name'] = $this->ask('What is your name');
-        $data['email'] = $this->ask('What is your email!');
-        $data['password'] = $this->ask('What is your password!');
-
-        $validatedData = Validator::make($data, [
-            'name' => 'required|min:3|max:100',
-            'email' => 'required|min:3|max:100|email|unique:users,email',
-            'password' => 'required|min:3|max:100',
-        ]);
-
-        if (! $validatedData->passes()) {
-            throw new RuntimeException($validatedData->errors()->first());
-        }
-
-        User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => $data['password'],
-            'is_admin' => true,
-        ]);
-
-        $this->info('Portfolio has been instaled successfuly!');
     }
-
 
     /**
      * Exec sheel with pretty print.
