@@ -37,8 +37,8 @@ class InstallPortfolio extends Command
      */
     public function handle()
     {
-        $this->execShellWithPrettyPrint('php artisan key:generate');
         $this->execShellWithPrettyPrint('php artisan migrate');
+        $this->execShellWithPrettyPrint('php artisan key:generate');
     }
 
     /**
