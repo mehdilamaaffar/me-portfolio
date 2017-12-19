@@ -19,7 +19,6 @@ class CreateGalleriesTable extends Migration
             $table->string('name_slug');
             $table->integer('user_id');
             $table->boolean('published');
-            $table->foreign('id')->references('gallery_id')->on('photos')->onDelete('cascade');
             $table->timestamps();
         });
     }
