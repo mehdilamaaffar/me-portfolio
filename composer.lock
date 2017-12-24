@@ -24,8 +24,7 @@
                 "php": ">=5.3.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "@stable",
-                "heroku/heroku-buildpack-php": "*"
+                "phpunit/phpunit": "@stable"
             },
             "type": "project",
             "autoload": {
