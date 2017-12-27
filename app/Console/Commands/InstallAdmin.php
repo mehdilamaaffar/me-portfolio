@@ -57,7 +57,7 @@ class InstallAdmin extends Command
         User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => $data['password'],
+            'password' => bcrypt($data['password']),
             'is_admin' => true,
         ]);
 
