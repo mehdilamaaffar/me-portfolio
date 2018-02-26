@@ -37,7 +37,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
 
             // my middleware
-            \App\Http\Middleware\AddSecurityHeaders,
+            \App\Http\Middleware\AddSecurityHeaders::class,
         ],
 
         'api' => [
