@@ -12,9 +12,9 @@ class Photo extends Model
 
     protected $uploadedFile;
 
-    protected $width;
+    protected $width = '300px';
 
-    protected $height;
+    protected $height = '300px';
 
     public function gallery()
     {
