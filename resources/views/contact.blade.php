@@ -1,8 +1,8 @@
 @extends('layouts/app')
 
-@include('layouts.header')
-
 @section('content')
+    @include('layouts.header')
+
     <div class="container">
         <div class="row">
             <div class="col-md-1"></div>
