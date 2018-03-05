@@ -4,10 +4,14 @@ mix
   .js('resources/assets/js/app.js', 'public/js')
   .sass('resources/assets/sass/app.scss', 'public/css')
   .scripts([
-    'resources/assets/vendor/js/lightbox-plus-jquery.min.js',
-    'resources/assets/vendor/js/dropzone.min.js',
+    'resources/assets/vendors/js/lightbox-plus-jquery.min.js',
+    'resources/assets/vendors/js/dropzone.min.js',
   ], 'public/js/vendor.js')
   .styles([
-    'resources/assets/vendor/css/lightbox.min.css',
-    'resources/assets/vendor/css/dropzone.min.css',
+    'resources/assets/vendors/css/lightbox.min.css',
+    'resources/assets/vendors/css/dropzone.min.css',
   ], 'public/css/vendor.css')
+  .browserSync({
+    proxy: 'localhost:8000',
+    open: false,
+  })
