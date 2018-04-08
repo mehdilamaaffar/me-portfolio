@@ -19,5 +19,16 @@ $factory->define(App\User::class, function (Faker $faker) {
         'email' => 'johndoe@gmail.com',
         'password' => bcrypt('password'),
         'remember_token' => str_random(10),
+        'is_admin' => false,
+    ];
+});
+
+$factory->state(App\User::class, 'admin', function (Faker $faker) {
+    return [
+        'name' => $faker->name,
+        'email' => $faker->email,
+        'password' => bcrypt('password'),
+        'remember_token' => str_random(10),
+        'is_admin' => true,
     ];
 });

@@ -13,7 +13,7 @@ Route::get('/contact', 'ContactController@index');
 Route::post('/contact', 'ContactController@store');
 
 // admin dashboard
-Route::group(['namespace' => 'admin', 'prefix' => 'admin', 'middleware' => 'auth'], function () {
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', 'GalleryController@index')->name('admin');
     Route::resource('gallery', 'GalleryController');
 

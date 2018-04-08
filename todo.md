@@ -1,6 +1,0 @@
-- add tests
-- add sweet alert
-- refactor js scripts call
-- integrat vue js
-- turbo links
-- about page
