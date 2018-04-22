@@ -16,7 +16,7 @@
                 </div>
 
                 <div class="bottom-section">
-                    <div class="form">
+                    <div class="form contact__form">
                         @include('partials.errors')
 
                         @if (session('status'))

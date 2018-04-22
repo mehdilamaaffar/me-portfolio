@@ -1,5 +1,6 @@
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url(https://fonts.googleapis.com/css?family=EB+Garamond|Cardo:400italic);
 
 // Variables
 @import "variables";
@@ -7,6 +8,50 @@
 @import "bootstrap";
 @import 'mixins/bem';
 @import 'pages/about';
+
+.sandbox-correct-pronounciation {
+  padding: 1em;
+
+  .heading-correct-pronounciation {
+    margin: auto;
+    text-align: center;
+    position: relative;
+  }
+
+  h1 {
+    color: #555;
+    font-family: 'Cardo', serif;
+    font-size: 1.5em;
+    font-weight: normal;
+    font-style: italic;
+    letter-spacing: 0.1em;
+    line-height: 2.2em;
+
+    em {
+      font-family: 'EB Garamond', serif;
+      font-size: 2.5em;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: block;
+      font-style: normal;
+      padding-top: 0.1em;
+      // text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.1);
+      &::before,
+      &::after {
+        content: "§";
+        display: inline-block;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+        opacity: 0.2;
+        margin: 0 0.6em;
+        font-size: 0.5em;
+      }
+    }
+  }
+}
 
 .photographer-name {
   text-align: center;
@@ -193,4 +238,8 @@
 
 .bg-w {
   background-color: #fff;
+}
+
+.contact__form {
+  padding: 1em;
 }
