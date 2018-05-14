@@ -20,3 +20,12 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 const app = new Vue({
     el: '#app'
 });
+
+
+new Dropzone(document.body, {
+  previewsContainer: ".dropzone-previews",
+  // You probably don't want the whole body
+  // to be clickable to select files
+  clickable: false,
+  parallelUploads: false,
+});
